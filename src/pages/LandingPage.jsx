@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Logo3D from '../components/Logo3D';
-import { Users, PlayCircle, Award, ArrowRight, Mail } from 'lucide-react';
+import { Users, PlayCircle, Award, ArrowRight, Mail } from '../utils/icons';
 import Button from '../components/Button';
 
 export default function LandingPage() {
