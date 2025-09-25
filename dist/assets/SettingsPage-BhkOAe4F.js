@@ -1,0 +1,1 @@
+import{j as t}from"./index-Bsw5YMR-.js";function e(){return t.jsxs("div",{className:"p-4",children:[t.jsx("h1",{className:"text-2xl font-bold mb-4",children:"Settings"}),t.jsx("p",{className:"text-sm text-gray-600",children:"هذه صفحة إعدادات مؤقتة (تحت التطوير)."})]})}export{e as default};

@@ -1,0 +1,314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------- لوحة "خطى" الجديدة: هادئة، احترافية، تباين جيد -------- */
+:root {
+  /* لوحة ثابتة وفق الصورة */
+  --khuta-primary: #0A2E5B;          /* أزرق داكن */
+  --khuta-secondary: #008080;        /* فيروزي */
+  --khuta-accent: #FFD200;           /* ذهبي */
+  --khuta-background: #F5F7FA;       /* خلفية فاتحة */
+  --khuta-neutral: #DDE3EA;          /* حد محايد افتراضي */
+  /* سرعات حركة مخفّفة جداً */
+  --kh-transition: .12s;
+  --kh-anim: .18s;
+
+  /* درجات مساندة */
+  --khuta-primary-900: #1B3150;
+  --khuta-primary-800: #223A5F;
+  --khuta-primary-700: #2E4C7B;
+  --khuta-primary-600: #4A6793;
+
+  --khuta-secondary-900: #3A4857;
+  --khuta-secondary-700: #5D7187;
+  --khuta-secondary-400: #AABCD2;
+
+  --khuta-neutral-900: #1A1A1A; /* نص أساسي داكن */
+  --khuta-neutral-700: #4A5B6C;
+  --khuta-neutral-500: #8F9AAD;
+  --khuta-neutral-300: #E6EAEF;
+  --khuta-neutral-100: #FAFBFC;
+
+  /* دلالية متوافقة مع الهوية */
+  --khuta-success: #2E7D6D;
+  --khuta-warning: #D69E2E;
+  --khuta-danger:  #C2414B;
+  --khuta-info:    #6FA0C8;
+
+  /* ظلال وطبقات خفيفة */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --soft-shadow: 0 6px 20px rgba(32, 64, 120, 0.08);
+  --soft-shadow-strong: 0 10px 28px rgba(32, 64, 120, 0.12);
+
+  /* تدرّج خفيف جداً (اختياري) */
+  --modern-gradient: linear-gradient(90deg, rgba(183,231,227,0.35), rgba(124,150,178,0.15));
+}
+
+html, body, #root { height: 100%; }
+
+/* -------- الخطوط والخلفية الافتراضية -------- */
+body {
+  font-family: 'Tajawal', 'Cairo', Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--khuta-background);
+  color: var(--khuta-neutral-900);
+  min-height: 100vh;
+  line-height: 1.65;
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+  font-weight: 800;
+  color: var(--khuta-primary);
+  margin-bottom: .7em;
+}
+
+/* -------- قواعد تركيز وتحكم حركة لطيفة -------- */
+*:focus-visible {
+  outline: 2px solid var(--khuta-secondary);
+  outline-offset: 2px;
+}
+
+a, button {
+  transition: background-color var(--kh-transition) ease-out,
+              color var(--kh-transition) ease-out,
+              border-color var(--kh-transition) ease-out,
+              box-shadow var(--kh-transition) ease-out,
+              transform .08s ease-out;
+}
+
+/* تعميم تخفيف الحركة على أغلب العناصر التفاعلية */
+* { transition-duration: var(--kh-transition); transition-timing-function: ease-out; }
+
+/* احترام تفضيل تقليل الحركة - يوقف تقريباً كل الأنيميشن */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* -------- Glassmorphism خفيف -------- */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--khuta-neutral);
+  box-shadow: var(--soft-shadow);
+  border-radius: 1rem;
+}
+
+/* -------- سطح ناعم (Surface) -------- */
+.surface {
+  background: #fff;
+  box-shadow: var(--soft-shadow);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--khuta-neutral);
+}
+
+/* -------- تدرّج muted خفيف جداً (اختياري للأقسام العلوية) -------- */
+.muted-gradient {
+  background: var(--modern-gradient);
+}
+
+/* -------- نسب صور عامة + إطار موحّد -------- */
+.media-frame { position: relative; width: 100%; border-radius: 1rem; overflow: hidden; border: 1px solid var(--khuta-neutral); background: #fff; }
+.media-frame .media-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.ar-21-9 { aspect-ratio: 21/9; }
+.ar-16-9 { aspect-ratio: 16/9; }
+.ar-4-3  { aspect-ratio: 4/3; }
+.ar-1-1  { aspect-ratio: 1/1; }
+
+/* -------- Neumorphism مُخفّف (اختياري) -------- */
+.neumorph {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow:
+    6px 6px 18px rgba(32, 64, 120, 0.08),
+    -6px -6px 18px rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--khuta-neutral);
+}
+
+/* -------- شريط تنقل وفوتر بنبرة هادئة -------- */
+.navbar {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(4px);
+  padding: 1rem 2.0rem;
+  border-radius: 1rem;
+  border: 1px solid var(--khuta-neutral);
+  box-shadow: 0 2px 12px rgba(32, 64, 120, 0.06);
+}
+
+.footer {
+  background: var(--khuta-background);
+  color: var(--khuta-secondary-700);
+  border-top: 1px solid var(--khuta-neutral);
+  padding: 2.0rem 0 .8rem 0;
+  font-size: 1.06rem;
+  text-align: center;
+}
+
+/* -------- بطاقات عامة -------- */
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: var(--soft-shadow);
+  padding: 1.2rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--khuta-neutral);
+}
+
+/* -------- أزرار متناسقة مع الهوية -------- */
+.btn, .button {
+  padding: .55em 1.6em;
+  border-radius: .65em;
+  font-size: .98em;
+  font-weight: 700;
+  border: 1px solid transparent;
+  letter-spacing: .01em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+}
+
+/* أساسي */
+.btn-primary {
+  background: var(--khuta-primary);
+  color: #fff;
+}
+.btn-primary:hover { background: #1B3766; }
+
+/* ثانوي */
+.btn-secondary {
+  background: #fff;
+  color: var(--khuta-primary);
+  border-color: var(--khuta-primary);
+}
+.btn-secondary:hover {
+  background: var(--khuta-primary);
+  color: #fff;
+}
+
+/* لمسة مائية (Accent) */
+.btn-accent {
+  background: var(--khuta-accent);
+  color: var(--khuta-primary);
+  border-color: var(--khuta-accent);
+}
+.btn-accent:hover { background: #A7DFDB; }
+
+/* خطر/تحذير/نجاح */
+.btn-danger  { background: var(--khuta-danger);  color: #fff; }
+.btn-warning { background: var(--khuta-warning); color: #fff; }
+.btn-success { background: var(--khuta-success); color: #fff; }
+
+.btn-danger:hover  { background: #A83840; }
+.btn-warning:hover { background: #C98E22; }
+.btn-success:hover { background: #276C60; }
+
+/* تعطيل */
+.btn:disabled, .button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* -------- إدخالات حقول -------- */
+input, textarea, select {
+  border-radius: .7em;
+  border: 1.2px solid var(--khuta-neutral);
+  background: #fff;
+  color: var(--khuta-neutral-900);
+  padding: .68em 1em;
+  font-size: .97em;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--khuta-secondary-400);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--khuta-secondary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124,150,178,0.25);
+}
+
+/* -------- شارات وتنبيهات خفيفة -------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  padding: .28em .7em;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.badge-accent {
+  background: var(--khuta-accent);
+  color: var(--khuta-primary);
+  border-color: var(--khuta-accent);
+}
+.badge-primary {
+  background: var(--khuta-primary);
+  color: #fff;
+}
+.badge-outline {
+  background: #fff;
+  color: var(--khuta-primary);
+  border-color: var(--khuta-primary);
+}
+
+/* معلومات/نجاح/تحذير */
+.alert {
+  padding: .85rem 1rem;
+  border-radius: .8rem;
+  border: 1px solid var(--khuta-neutral);
+  background: #fff;
+}
+.alert-info {
+  background: #EAF2F8;
+  color: var(--khuta-primary);
+  border-color: #D6E6F2;
+}
+.alert-success {
+  background: #E6F4F2;
+  color: var(--khuta-success);
+  border-color: #CCEAE5;
+}
+.alert-warning {
+  background: #FFF5E5;
+  color: var(--khuta-warning);
+  border-color: #F7E4C2;
+}
+.alert-danger {
+  background: #FDEBEC;
+  color: var(--khuta-danger);
+  border-color: #F6D3D6;
+}
+
+/* -------- Scrollbar -------- */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--khuta-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--khuta-neutral-300);
+  border-radius: 4px;
+}
+
+/* -------- تحديد النص -------- */
+::-webkit-selection {
+  background: var(--khuta-accent);
+  color: var(--khuta-primary);
+}
+::selection {
+  background: var(--khuta-accent);
+  color: var(--khuta-primary);
+}
+
+/* -------- دعم RTL افتراضي -------- */
+html[dir="rtl"] {}
+
+/* -------- تحسين توافق مع البورتالات -------- */
+body[data-headlessui-portal], body {
+  overflow: auto !important;
+}

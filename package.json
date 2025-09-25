@@ -1,0 +1,46 @@
+{
+  "name": "khuta-react-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.8",
+    "@heroicons/react": "^2.0.18",
+    "framer-motion": "^10.18.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.3",
+    "lucide-react": "^0.544.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-parallax-tilt": "^1.7.309",
+    "react-router-dom": "^6.14.1",
+    "react-tilt": "^1.0.2",
+    "tailwindcss-intersect": "^2.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@vitejs/plugin-react": "^5.0.3",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-react": "^7.37.5",
+    "javascript-obfuscator": "^4.1.1",
+    "jsdom": "^27.0.0",
+    "postcss": "^8.4.0",
+    "prettier": "^3.6.2",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "sharp": "^0.34.4",
+    "svgo": "^4.0.0",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.0.0",
+    "vite-plugin-image-optimizer": "^2.0.2",
+    "vite-plugin-javascript-obfuscator": "^3.1.0",
+    "vitest": "^1.0.0"
+  }
+}

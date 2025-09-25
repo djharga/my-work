@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .bg { fill: #f8fafc }
+    .panel { fill: #ffffff; stroke: #e6e9ee; stroke-width: 1 }
+    .khuta { fill: #0A2E5B }
+    .muted { fill: #6b7280 }
+    .token { fill: #94A3B8 }
+    text { font-family: Arial, Helvetica, sans-serif }
+    .title { font-size: 24px; font-weight: 700; fill: #0A2E5B }
+    .h { font-size: 18px; font-weight: 600 }
+    .p { font-size: 14px }
+    .box-title { font-size: 13px; font-weight: 700 }
+  </style>
+
+  <rect width="100%" height="100%" class="bg"/>
+
+  <!-- Header -->
+  <text x="40" y="40" class="title">ملخّص تنفيذي للتنفيذ - مشروع خطى</text>
+  <text x="40" y="70" class="p muted">الصورة الذهنية للمزايا والتحديثات التي طُبِّقت على الكود والمظهر</text>
+
+  <!-- Navbar / Shadows -->
+  <g transform="translate(40,100)">
+    <rect width="330" height="80" rx="8" class="panel" />
+    <text x="16" y="30" class="box-title">Navbar</text>
+    <text x="16" y="52" class="p muted">• `shadow-sm` على الشريط الرئيسي</text>
+    <text x="200" y="52" class="p token">خلفية: khuta-neutral-100</text>
+  </g>
+
+  <!-- Shadow system -->
+  <g transform="translate(400,100)">
+    <rect width="330" height="80" rx="8" class="panel" />
+    <text x="16" y="30" class="box-title">نظام الظلال الناعمة</text>
+    <text x="16" y="52" class="p muted">• بطاقات: `shadow-lg` + `hover:shadow-xl`</text>
+    <text x="16" y="68" class="p muted">• أزرار: `shadow-md` + `hover:shadow-lg`</text>
+  </g>
+
+  <!-- Tailwind tokens -->
+  <g transform="translate(760,100)">
+    <rect width="580" height="80" rx="8" class="panel" />
+    <text x="16" y="30" class="box-title">توحيد ألوان Tailwind</text>
+    <text x="16" y="52" class="p muted">• إضافة توكن `khuta` في `tailwind.config.js`</text>
+    <text x="16" y="68" class="p muted">• توكن تحذير: `khuta.warning.50: #fefce8`</text>
+  </g>
+
+  <!-- Home Page (hero + split) -->
+  <g transform="translate(40,220)">
+    <rect width="1300" height="180" rx="10" class="panel" />
+    <text x="16" y="30" class="box-title">الصفحة الرئيسة - HomePage</text>
+    <text x="16" y="56" class="p muted">• قسم هيرو متقدم مع صورة خلفية وخيارات CTA</text>
+    <text x="16" y="76" class="p muted">• قسم مميّز منقسم (Split):</text>
+    <text x="36" y="96" class="p">— يسار (50%): زمالة المراجعين الداخليين (CIA) — أزرار الأجزاء وCTA</text>
+    <text x="36" y="116" class="p">— يمين (50%): شبكة الدورات (4-6 دورات مستعرضة باستخدام `CourseCard`)</text>
+  </g>
+
+  <!-- Fellowship Page -->
+  <g transform="translate(40,420)">
+    <rect width="640" height="300" rx="10" class="panel" />
+    <text x="16" y="30" class="box-title">صفحة الزمالة - FellowshipPage</text>
+    <text x="16" y="56" class="p muted">• شعار نائب + رابط رسمي إلى IIA</text>
+    <text x="16" y="80" class="p muted">• أكورديون من ثلاث وحدات: Part 1, Part 2, Part 3</text>
+    <text x="16" y="104" class="p muted">• داخل كل جزء: قائمة موارد منسّقة:</text>
+    <text x="36" y="128" class="p">📄 ملفات للشرح — ❓ بنك أسئلة (MCQ) — ▶️ فيديوهات — 🎧 بودكاست</text>
+  </g>
+
+  <!-- Admin Dashboard -->
+  <g transform="translate(700,420)">
+    <rect width="640" height="300" rx="10" class="panel" />
+    <text x="16" y="30" class="box-title">لوحة الإدارة - AdminDashboard</text>
+    <text x="16" y="56" class="p muted">• شريط جانبي ثابت بالروابط: لوحة / مستخدمون / دورات / محتوى / إعدادات</text>
+    <text x="16" y="80" class="p muted">• منطقة رئيسية ديناميكية تعرض: لمحة عامة، جدول المستخدمين، شبكة الدورات، إدارة المحتوى</text>
+    <text x="16" y="104" class="p muted">• تستخدم: `CourseCard`, `FileTreeViewer` كمكوّنات مساعدة</text>
+  </g>
+
+  <!-- SecureView -->
+  <g transform="translate(40,740)">
+    <rect width="1300" height="110" rx="8" class="panel" />
+    <text x="16" y="30" class="box-title">ميزة منع تصوير الشاشة - SecureView</text>
+    <text x="16" y="56" class="p muted">• HOC `SecureView.jsx` يغلف المحتوى الحساس (ex: CourseDetailPage)</text>
+    <text x="16" y="76" class="p muted">• CSS ::after overlay + JS يستمع لـ PrintScreen ويعرض تحذير (ردعي فقط)</text>
+    <text x="16" y="96" class="p muted">• تم تغليف `InteractiveTimeline` داخل `CourseDetailPage` بـ &lt;SecureView&gt;</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="40" y="880" class="p muted">الملف: implementation-summary.svg — محفوظ في جذر المشروع (root directory)</text>
+</svg> 

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <style>
+    .bg { fill: #f8fafc }
+    .panel { fill: #ffffff; stroke: #e6e9ee; stroke-width: 1 }
+    .accent { fill: #0A2E5B }
+    .muted { fill: #6b7280 }
+    .token { fill: #94A3B8 }
+    text { font-family: 'Tajawal', Arial, Helvetica, sans-serif }
+    .title { font-size: 28px; font-weight: 800; fill: #0A2E5B }
+    .h { font-size: 18px; font-weight: 700 }
+    .p { font-size: 14px }
+    .box-title { font-size: 13px; font-weight: 700 }
+  </style>
+
+  <rect width="100%" height="100%" class="bg"/>
+
+  <!-- Main title -->
+  <text x="60" y="60" class="title">مخطط المشروع الكامل - Khuta (ملخّص بصري)</text>
+  <text x="60" y="92" class="p muted">نظرة عامة على البنية، الصفحات الرئيسية، مكونات الواجهة، نظام التصميم، والميزات الأمنية.</text>
+
+  <!-- Top row: Architecture -->
+  <g transform="translate(60,130)">
+    <rect width="1480" height="140" rx="10" class="panel" />
+    <text x="20" y="34" class="box-title">بنية المشروع</text>
+    <text x="20" y="60" class="p">• أدوات البناء: Vite, Tailwind CSS, PostCSS</text>
+    <text x="20" y="80" class="p">• إدارة الحالة: Context (CourseContext)</text>
+    <text x="20" y="100" class="p">• توجيه: React Router — أهم الممرات: /, /courses, /fellowship, /features, /admin</text>
+    <text x="800" y="60" class="p">• ملفات مهمة:</text>
+    <text x="800" y="82" class="p">- `tailwind.config.js` (توكنات `khuta`)</text>
+    <text x="800" y="102" class="p">- `src/pages/*`، `src/components/*`, `src/layouts/*`</text>
+  </g>
+
+  <!-- Pages and Features -->
+  <g transform="translate(60,300)">
+    <rect width="720" height="320" rx="10" class="panel" />
+    <text x="20" y="34" class="box-title">الصفحات الرئيسة</text>
+    <text x="20" y="60" class="p">• `HomePage` - هيرو + قسم مميّز لزمالة CIA (split-screen)</text>
+    <text x="20" y="84" class="p">• `FellowshipPage` - محتوى مفصّل، أكورديون Parts 1-3، روابط وموارد</text>
+    <text x="20" y="108" class="p">• `FeaturesPage`، `Courses`, `CourseDetailPage` (مع `SecureView` حول المحتوى الحساس)</text>
+    <text x="20" y="132" class="p">• `AdminDashboard` - واجهة إدارة كاملة: شريط جانبي + محتوى رؤي</text>
+
+    <rect x="740" y="0" width="800" height="320" rx="10" class="panel" />
+    <text x="760" y="34" class="box-title">المكونات القابلة لإعادة الاستخدام</text>
+    <text x="760" y="60" class="p">• `CourseCard` - بطاقة دورة قابلة لإعادة الاستخدام</text>
+    <text x="760" y="84" class="p">• `FileTreeViewer` - مستعرض الملفات/المحتوى</text>
+    <text x="760" y="108" class="p">• `InteractiveTimeline`, `AIPanel`, `Modal`, `Card`</text>
+    <text x="760" y="132" class="p">• `SecureView` - HOC لردع لقطات الشاشة</text>
+  </g>
+
+  <!-- Design System -->
+  <g transform="translate(60,650)">
+    <rect width="720" height="200" rx="10" class="panel" />
+    <text x="20" y="34" class="box-title">نظام التصميم</text>
+    <text x="20" y="60" class="p">• ألوان: `khuta.primary`, `khuta.secondary`, `khuta.accent`, `khuta.neutral`</text>
+    <text x="20" y="84" class="p">• إضافات: `khuta.warning.50` (yellow-50 token)</text>
+    <text x="20" y="108" class="p">• نظام الظلال: موحّد عبر الموقع (shadow-sm/md/lg/xl مع transition)</text>
+    <text x="20" y="132" class="p">• خطوط: Tajawal, Poppins مُهيّئة في Tailwind</text>
+
+    <rect x="740" y="0" width="800" height="200" rx="10" class="panel" />
+    <text x="760" y="34" class="box-title">أمان وممارسات</text>
+    <text x="760" y="60" class="p">• `SecureView` مضاف كمكوّن حماية للعرض — رادع ولا يغني عن DRM</text>
+    <text x="760" y="84" class="p">• تحذيرات PrintScreen + ::after overlay CSS</text>
+    <text x="760" y="108" class="p">• محتوى حساس يجب حمايته على مستوى الخادم (نُصح بذلك)</text>
+  </g>
+
+  <!-- Dev & Build -->
+  <g transform="translate(60,880)">
+    <rect width="1480" height="140" rx="10" class="panel" />
+    <text x="20" y="34" class="box-title">أدوات التطوير ونتائج البناء</text>
+    <text x="20" y="60" class="p">• أوامر: `npm run dev` (vite) و `npm run build` — تم التحقق من بناء الإنتاج بنجاح</text>
+    <text x="20" y="84" class="p">• الملفات المولّدة: `dist/` (CSS مُولَّد يتضمن كلاسات Tailwind المستخدمة)</text>
+    <text x="20" y="108" class="p">• خطط لاحقة: إضافة اختبارات، CI، وحماية server-side للمحتوى الحساس</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="60" y="1060" class="p muted">الملف: project-overview.svg — محفوظ في جذر المشروع</text>
+</svg> 

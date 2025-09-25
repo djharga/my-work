@@ -1,0 +1,50 @@
+{
+  "user": {
+    "name": "أحمد المتدرب",
+    "title": "مراجع داخلي | متخصّص إدارة المخاطر",
+    "avatar": "https://picsum.photos/seed/profile/120/120",
+    "digitalCard": {
+      "icon": "DB",
+      "text": "بطاقة أعمال رقمية"
+    }
+  },
+  "buttons": {
+    "share": "مشاركة الملف",
+    "viewCertificate": "عرض الشهادة",
+    "download": "تنزيل",
+    "viewProject": "عرض المشروع"
+  },
+  "sections": {
+    "certificates": {
+      "title": "الشهادات والإنجازات",
+      "placeholder": "صورة الشهادة"
+    },
+    "skillsAndProjects": {
+      "title": "المهارات والمشاريع"
+    },
+    "skills": {
+      "title": "المهارات"
+    },
+    "projects": {
+      "description": "عرض المشروع والنتائج."
+    }
+  },
+  "certificates": [
+    { "id": "c1", "title": "CIA - Foundation", "date": "2024-06-21" },
+    { "id": "c2", "title": "Risk Management", "date": "2024-09-02" },
+    { "id": "c3", "title": "Advanced Auditing", "date": "2025-02-14" }
+  ],
+  "projects": [
+    { "id": "p1", "title": "Audit Report - Case A", "img": "" },
+    { "id": "p2", "title": "Process Improvement Plan", "img": "" },
+    { "id": "p3", "title": "Compliance Dashboard", "img": "" }
+  ],
+  "skills": [
+    "التدقيق الداخلي",
+    "إدارة المخاطر",
+    "تحليل البيانات",
+    "القيادة",
+    "إدارة العمليات",
+    "لوحات المراقبة"
+  ]
+}
