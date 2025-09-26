@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ConfirmationModal from './ConfirmationModal';
 
-// ألوان "خطى" الجديدة + تأثيرات أقل
+// ألوان Grad School + تأثيرات محسّنة
 const VARIANTS = {
-  primary: 'bg-khuta-primary text-white hover:bg-[#1B3766] focus-visible:outline-none',
-  secondary: 'bg-white border border-khuta-neutral text-khuta-primary hover:bg-khuta-neutral-100',
-  accent: 'bg-khuta-accent text-khuta-primary hover:bg-[#A7DFDB]',
-  danger: 'bg-[#C2414B] text-white hover:bg-[#A83840]',
-  ghost: 'bg-transparent text-khuta-primary hover:bg-khuta-neutral-100'
+  primary: 'grad-btn-primary bg-grad-primary text-white hover:bg-grad-primary-dark hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-grad-primary focus:ring-opacity-50',
+  secondary: 'grad-btn-secondary bg-white border border-grad-primary text-grad-primary hover:bg-grad-primary hover:text-white hover:shadow-lg hover:-translate-y-0.5',
+  accent: 'grad-btn-accent bg-grad-accent text-white hover:bg-amber-600 hover:shadow-lg hover:-translate-y-0.5',
+  danger: 'bg-red-600 text-white hover:bg-red-700 hover:shadow-lg hover:-translate-y-0.5',
+  ghost: 'bg-transparent text-grad-primary hover:bg-grad-gray-50 hover:text-grad-primary-dark'
 };
 
 const SIZES = {
@@ -56,12 +56,13 @@ export default function Button({
   };
 
   const base = `
-    relative inline-flex items-center justify-center gap-2.5 
-    rounded-xl font-medium 
-    transition-colors duration-150
-    focus:outline-none focus:ring-2 focus:ring-khuta-secondary focus:ring-offset-1
+    grad-btn relative inline-flex items-center justify-center gap-2.5 
+    rounded-lg font-semibold 
+    transition-all duration-300 ease-in-out
+    focus:outline-none focus:ring-2 focus:ring-offset-2
     select-none
     overflow-hidden
+    transform
   `;
   
   const variantClass = VARIANTS[variant] || VARIANTS.primary;

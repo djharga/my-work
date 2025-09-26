@@ -20,8 +20,10 @@ const navLinks = [
 
 const NavItem = ({ to, label, onClick }) => {
   const navItemClass = ({ isActive }) =>
-    `px-3 py-2 rounded-lg font-medium ${
-      isActive ? 'bg-khuta-primary text-white' : 'text-khuta-primary'
+    `grad-nav-link px-4 py-2 rounded-md font-medium transition-all duration-300 relative ${
+      isActive 
+        ? 'text-grad-primary bg-grad-gray-50 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-grad-primary after:rounded-full' 
+        : 'text-grad-gray-700 hover:text-grad-primary hover:bg-grad-gray-50'
     }`;
 
   return (
@@ -65,17 +67,17 @@ export default function Navbar() {
   const isCoursesPage = location.pathname.startsWith('/courses');
 
   return (
-    <nav className="bg-white border-b border-khuta-neutral" aria-label="الرئيسية - التنقل">
-      <div className="container mx-auto px-4">
+    <nav className="grad-navbar bg-white border-b border-grad-gray-200 shadow-sm sticky top-0 z-50" aria-label="الرئيسية - التنقل">
+      <div className="grad-navbar-container max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <Link to="/" className="flex items-center gap-2" aria-label="العودة للرئيسية">
-              <img src={LogoImg} alt="شعار منصة خطى" className="h-9 w-9 rounded-full" />
-              <span className="text-xl font-extrabold text-khuta-primary tracking-wide">خطى</span>
+            <Link to="/" className="grad-logo flex items-center gap-3 text-grad-primary hover:text-grad-primary-light transition-colors" aria-label="العودة للرئيسية">
+              <img src={LogoImg} alt="شعار منصة خطى" className="h-10 w-10 rounded-full shadow-md" />
+              <span className="text-2xl font-bold tracking-wide">خطى</span>
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="grad-nav-menu hidden md:flex items-center gap-1">
             <NavItem to="/" label="الرئيسية" />
             <CoursesDropdown isActive={isCoursesPage} />
             {navLinks.slice(1).map((link) => (

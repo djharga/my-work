@@ -8,17 +8,19 @@ import KPIsSection from '../components/KPIsSection';
 
 export default function HomePage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8" dir="rtl">
-      <HeroSection />
+    <main className="grad-theme bg-grad-bg-secondary min-h-screen" dir="rtl">
+      <div className="grad-container max-w-7xl mx-auto px-4 py-8">
+        <HeroSection />
 
-      {/* KPIs */}
-      <KPIsSection />
+        {/* KPIs */}
+        <KPIsSection />
 
-      <FeaturesSection />
+        <FeaturesSection />
 
-      <CoursesBannerSection />
+        <CoursesBannerSection />
 
-      <CallToActionSection />
+        <CallToActionSection />
+      </div>
     </main>
   );
 }

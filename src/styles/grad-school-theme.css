@@ -1,0 +1,561 @@
+/* ====== Grad School Theme - نظام الألوان المرجعي ====== */
+
+:root {
+  /* الألوان الأساسية - Grad School Style */
+  --grad-primary: #1e3a8a;           /* أزرق داكن أساسي */
+  --grad-primary-dark: #1e40af;      /* أزرق داكن أكثر */
+  --grad-primary-light: #3b82f6;     /* أزرق فاتح */
+  --grad-secondary: #64748b;         /* رمادي متوسط */
+  --grad-accent: #f59e0b;            /* برتقالي ذهبي للتمييز */
+  
+  /* الألوان المحايدة */
+  --grad-white: #ffffff;
+  --grad-gray-50: #f8fafc;
+  --grad-gray-100: #f1f5f9;
+  --grad-gray-200: #e2e8f0;
+  --grad-gray-300: #cbd5e1;
+  --grad-gray-400: #94a3b8;
+  --grad-gray-500: #64748b;
+  --grad-gray-600: #475569;
+  --grad-gray-700: #334155;
+  --grad-gray-800: #1e293b;
+  --grad-gray-900: #0f172a;
+  
+  /* ألوان الخلفية */
+  --grad-bg-primary: #ffffff;
+  --grad-bg-secondary: #f8fafc;
+  --grad-bg-dark: #1e293b;
+  
+  /* ظلال متدرجة */
+  --grad-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --grad-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --grad-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --grad-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --grad-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* انتقالات سلسة */
+  --grad-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --grad-transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* نصف القطر */
+  --grad-radius-sm: 0.25rem;
+  --grad-radius: 0.375rem;
+  --grad-radius-md: 0.5rem;
+  --grad-radius-lg: 0.75rem;
+  --grad-radius-xl: 1rem;
+  --grad-radius-full: 9999px;
+}
+
+/* ====== التطبيق العام ====== */
+body.grad-theme {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--grad-bg-secondary);
+  color: var(--grad-gray-900);
+  line-height: 1.6;
+}
+
+/* ====== العناوين ====== */
+.grad-theme h1,
+.grad-theme h2,
+.grad-theme h3,
+.grad-theme h4,
+.grad-theme h5,
+.grad-theme h6 {
+  font-weight: 700;
+  color: var(--grad-primary);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.grad-theme h1 { font-size: 2.25rem; }
+.grad-theme h2 { font-size: 1.875rem; }
+.grad-theme h3 { font-size: 1.5rem; }
+.grad-theme h4 { font-size: 1.25rem; }
+.grad-theme h5 { font-size: 1.125rem; }
+.grad-theme h6 { font-size: 1rem; }
+
+/* ====== شريط التنقل - Grad School Style ====== */
+.grad-navbar {
+  background: var(--grad-white);
+  border-bottom: 1px solid var(--grad-gray-200);
+  box-shadow: var(--grad-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 1rem 0;
+}
+
+.grad-navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grad-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--grad-primary);
+  text-decoration: none;
+  transition: var(--grad-transition-fast);
+}
+
+.grad-logo:hover {
+  color: var(--grad-primary-light);
+}
+
+.grad-nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.grad-nav-item {
+  position: relative;
+}
+
+.grad-nav-link {
+  color: var(--grad-gray-700);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: var(--grad-transition-fast);
+  position: relative;
+}
+
+.grad-nav-link:hover {
+  color: var(--grad-primary);
+}
+
+.grad-nav-link.active {
+  color: var(--grad-primary);
+}
+
+.grad-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--grad-primary);
+  border-radius: var(--grad-radius-full);
+}
+
+/* ====== الأزرار - Grad School Style ====== */
+.grad-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--grad-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--grad-transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.grad-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* الزر الأساسي */
+.grad-btn-primary {
+  background: var(--grad-primary);
+  color: var(--grad-white);
+  border-color: var(--grad-primary);
+}
+
+.grad-btn-primary:hover:not(:disabled) {
+  background: var(--grad-primary-dark);
+  border-color: var(--grad-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--grad-shadow-lg);
+}
+
+/* الزر الثانوي */
+.grad-btn-secondary {
+  background: var(--grad-white);
+  color: var(--grad-primary);
+  border-color: var(--grad-primary);
+}
+
+.grad-btn-secondary:hover:not(:disabled) {
+  background: var(--grad-primary);
+  color: var(--grad-white);
+  transform: translateY(-1px);
+  box-shadow: var(--grad-shadow-lg);
+}
+
+/* زر الإجراء */
+.grad-btn-accent {
+  background: var(--grad-accent);
+  color: var(--grad-white);
+  border-color: var(--grad-accent);
+}
+
+.grad-btn-accent:hover:not(:disabled) {
+  background: #d97706;
+  border-color: #d97706;
+  transform: translateY(-1px);
+  box-shadow: var(--grad-shadow-lg);
+}
+
+/* ====== البطاقات - Grad School Style ====== */
+.grad-card {
+  background: var(--grad-white);
+  border-radius: var(--grad-radius-lg);
+  box-shadow: var(--grad-shadow);
+  border: 1px solid var(--grad-gray-200);
+  overflow: hidden;
+  transition: var(--grad-transition);
+}
+
+.grad-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--grad-shadow-xl);
+  border-color: var(--grad-gray-300);
+}
+
+.grad-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--grad-gray-200);
+}
+
+.grad-card-body {
+  padding: 1.5rem;
+}
+
+.grad-card-footer {
+  padding: 1rem 1.5rem;
+  background: var(--grad-gray-50);
+  border-top: 1px solid var(--grad-gray-200);
+}
+
+/* ====== الشبكة - Grid Layout ====== */
+.grad-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grad-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grad-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grad-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grad-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grad-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ====== الفوتر - Grad School Style ====== */
+.grad-footer {
+  background: var(--grad-gray-900);
+  color: var(--grad-gray-300);
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+.grad-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grad-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grad-footer-section h3 {
+  color: var(--grad-white);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.grad-footer-link {
+  color: var(--grad-gray-400);
+  text-decoration: none;
+  transition: var(--grad-transition-fast);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.grad-footer-link:hover {
+  color: var(--grad-white);
+}
+
+.grad-footer-bottom {
+  border-top: 1px solid var(--grad-gray-700);
+  padding-top: 1rem;
+  text-align: center;
+  color: var(--grad-gray-500);
+}
+
+/* ====== تأثيرات الصور ====== */
+.grad-image {
+  border-radius: var(--grad-radius-lg);
+  overflow: hidden;
+  transition: var(--grad-transition);
+  position: relative;
+}
+
+.grad-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--grad-shadow-xl);
+}
+
+.grad-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--grad-transition);
+}
+
+.grad-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ====== تأثيرات إضافية ====== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--grad-primary), var(--grad-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-animation {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(30, 58, 138, 0.6);
+  }
+}
+
+/* ====== تأثيرات التمرير ====== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== تحسينات الأجهزة اللمسية ====== */
+.touch-enabled .grad-btn {
+  min-height: 44px; /* الحد الأدنى للمس */
+}
+
+.touch-enabled .grad-nav-link {
+  padding: 12px 16px;
+}
+
+.no-touch .grad-card:hover {
+  transform: translateY(-8px);
+}
+
+.touch-enabled .grad-card {
+  transition: none; /* إزالة التأثيرات للأجهزة اللمسية */
+}
+
+/* ====== الاستجابة للأجهزة المحمولة ====== */
+@media (max-width: 768px) {
+  .grad-navbar-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .grad-nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .grad-grid-cols-2,
+  .grad-grid-cols-3,
+  .grad-grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grad-theme h1 { 
+    font-size: 2rem; 
+    line-height: 1.2;
+  }
+  .grad-theme h2 { 
+    font-size: 1.5rem; 
+    line-height: 1.3;
+  }
+  .grad-theme h3 { 
+    font-size: 1.25rem; 
+    line-height: 1.4;
+  }
+  
+  .grad-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
+  }
+  
+  .grad-container {
+    padding: 0 1rem;
+  }
+  
+  /* تحسين المساحات للموبايل */
+  .grad-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* تحسين الفوتر للموبايل */
+  .grad-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grad-container {
+    padding: 0 0.75rem;
+  }
+  
+  .grad-card-body,
+  .grad-card-header {
+    padding: 1rem;
+  }
+  
+  .grad-grid {
+    gap: 1rem;
+  }
+  
+  .grad-theme h1 {
+    font-size: 1.75rem;
+  }
+  
+  .grad-btn {
+    font-size: 0.875rem;
+    padding: 10px 20px;
+  }
+  
+  /* تحسين شريط التنقل للشاشات الصغيرة جداً */
+  .grad-navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .grad-logo {
+    font-size: 1.25rem;
+  }
+  
+  /* تقليل المساحات للشاشات الصغيرة */
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* ====== تحسينات للشاشات الكبيرة ====== */
+@media (min-width: 1200px) {
+  .grad-container {
+    max-width: 1200px;
+  }
+  
+  .grad-theme h1 {
+    font-size: 3.5rem;
+  }
+  
+  .grad-theme h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ====== تحسينات للشاشات فائقة العرض ====== */
+@media (min-width: 1600px) {
+  .grad-container {
+    max-width: 1400px;
+  }
+}
+
+/* ====== تحسينات الطباعة ====== */
+@media print {
+  .grad-navbar,
+  .grad-footer,
+  .floating-animation,
+  .pulse-glow {
+    display: none !important;
+  }
+  
+  .grad-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .grad-theme h1,
+  .grad-theme h2,
+  .grad-theme h3 {
+    color: #000 !important;
+  }
+}
+
+/* ====== تحسينات الإمكانية الوصولية ====== */
+@media (prefers-reduced-motion: reduce) {
+  .floating-animation,
+  .pulse-glow,
+  .scroll-reveal {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .grad-card:hover {
+    transform: none !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* يمكن إضافة نمط داكن لاحقاً */
+}
+
+/* ====== تحسينات للشاشات عالية الكثافة ====== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .grad-image img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

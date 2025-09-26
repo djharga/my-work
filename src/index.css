@@ -2,33 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* -------- لوحة "خطى" الجديدة: هادئة، احترافية، تباين جيد -------- */
+/* استيراد نمط Grad School */
+@import './styles/grad-school-theme.css';
+
+/* -------- لوحة "خطى" المحدثة: مطابقة لـ Grad School -------- */
 :root {
-  /* لوحة ثابتة وفق الصورة */
-  --khuta-primary: #0A2E5B;          /* أزرق داكن */
-  --khuta-secondary: #008080;        /* فيروزي */
-  --khuta-accent: #FFD200;           /* ذهبي */
-  --khuta-background: #F5F7FA;       /* خلفية فاتحة */
-  --khuta-neutral: #DDE3EA;          /* حد محايد افتراضي */
+  /* الألوان الأساسية المحدثة */
+  --khuta-primary: #1e3a8a;          /* أزرق داكن مطابق لـ Grad School */
+  --khuta-secondary: #64748b;        /* رمادي متوسط */
+  --khuta-accent: #f59e0b;           /* برتقالي ذهبي */
+  --khuta-background: #f8fafc;       /* خلفية فاتحة رمادية */
+  --khuta-neutral: #e2e8f0;          /* حد محايد مطابق */
   /* سرعات حركة مخفّفة جداً */
   --kh-transition: .12s;
   --kh-anim: .18s;
 
-  /* درجات مساندة */
-  --khuta-primary-900: #1B3150;
-  --khuta-primary-800: #223A5F;
-  --khuta-primary-700: #2E4C7B;
-  --khuta-primary-600: #4A6793;
+  /* درجات مساندة - Grad School Style */
+  --khuta-primary-900: #0f172a;
+  --khuta-primary-800: #1e293b;
+  --khuta-primary-700: #334155;
+  --khuta-primary-600: #475569;
 
-  --khuta-secondary-900: #3A4857;
-  --khuta-secondary-700: #5D7187;
-  --khuta-secondary-400: #AABCD2;
+  --khuta-secondary-900: #0f172a;
+  --khuta-secondary-700: #334155;
+  --khuta-secondary-400: #94a3b8;
 
-  --khuta-neutral-900: #1A1A1A; /* نص أساسي داكن */
-  --khuta-neutral-700: #4A5B6C;
-  --khuta-neutral-500: #8F9AAD;
-  --khuta-neutral-300: #E6EAEF;
-  --khuta-neutral-100: #FAFBFC;
+  --khuta-neutral-900: #0f172a; /* نص أساسي داكن */
+  --khuta-neutral-700: #334155;
+  --khuta-neutral-500: #64748b;
+  --khuta-neutral-300: #cbd5e1;
+  --khuta-neutral-100: #f1f5f9;
 
   /* دلالية متوافقة مع الهوية */
   --khuta-success: #2E7D6D;

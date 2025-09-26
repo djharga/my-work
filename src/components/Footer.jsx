@@ -19,7 +19,7 @@ const SocialLink = ({ href, label, icon }) => (
   <a 
     href={href} 
     aria-label={label} 
-    className="flex items-center gap-2 text-sm text-khuta-secondary hover:text-khuta-primary transition-colors duration-150"
+    className="grad-footer-link flex items-center gap-2 text-sm text-grad-gray-400 hover:text-white transition-colors duration-300"
   >
     {icon}
     <span>{label}</span>
@@ -30,7 +30,7 @@ const FooterLink = ({ to, label }) => (
   <li>
     <Link
       to={to}
-      className="text-sm text-khuta-secondary hover:text-khuta-primary transition-colors duration-150 rounded px-1 py-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-khuta-secondary"
+      className="grad-footer-link text-sm text-grad-gray-400 hover:text-white transition-colors duration-300 rounded px-1 py-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-grad-primary"
     >
       {label}
     </Link>
@@ -39,23 +39,23 @@ const FooterLink = ({ to, label }) => (
 
 export default function Footer() {
   return (
-    <footer className="relative mt-16 bg-khuta-background border-t border-khuta-neutral overflow-hidden">
-      <div className="container mx-auto px-4 py-10 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="grad-footer bg-grad-gray-900 text-grad-gray-300 relative overflow-hidden">
+      <div className="grad-footer-content max-w-7xl mx-auto px-4 py-12 relative z-10">
+        <div className="grad-footer-grid grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2">
-              <img src={LogoImg} alt="شعار منصة خطى" className="w-9 h-9 rounded-full" />
-              <span className="text-2xl font-extrabold text-khuta-primary tracking-tight">منصة خطى</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={LogoImg} alt="شعار منصة خطى" className="w-10 h-10 rounded-full shadow-md" />
+              <span className="text-2xl font-bold text-white tracking-wide">منصة خطى</span>
             </div>
-            <p className="mt-3 text-sm text-khuta-secondary max-w-xs leading-relaxed">
+            <p className="text-grad-gray-400 max-w-xs leading-relaxed">
               منصة تعليمية متطورة باللغة العربية، تركز على التجربة العملية والاحترافية.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-khuta-primary mb-3">روابط سريعة</h3>
+            <h3 className="grad-footer-section text-white font-semibold mb-4">روابط سريعة</h3>
             <ul className="space-y-2">
               {footerLinks.quick.map(link => <FooterLink key={link.to} {...link} />)}
             </ul>
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-khuta-primary mb-3">تواصل معنا</h3>
+            <h3 className="grad-footer-section text-white font-semibold mb-4">تواصل معنا</h3>
             <div className="space-y-3">
               <SocialLink 
                 href="mailto:support@khuta.com" 
@@ -80,13 +80,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Row: Copyright & Legal */}
-        <div className="mt-10 pt-6 border-t border-khuta-neutral text-xs text-khuta-secondary flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+        <div className="grad-footer-bottom mt-8 pt-6 border-t border-grad-gray-700 text-sm text-grad-gray-500 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} منصة خطى. جميع الحقوق محفوظة.</p>
-          <ul className="flex items-center gap-4">
+          <ul className="flex items-center gap-6">
             {footerLinks.legal.map(link => <FooterLink key={link.to} {...link} />)}
           </ul>
         </div>
       </div>
+      
+      {/* خلفية زخرفية */}
+      <div className="absolute inset-0 bg-gradient-to-br from-grad-primary/5 to-grad-accent/5 pointer-events-none"></div>
     </footer>
   );
 }
