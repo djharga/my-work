@@ -1,25 +1,94 @@
-# Khuta React Platform - MVP
+# 🚀 منصة خطى - Khuta React Platform
 
-نسخة MVP للواجهة الأمامية لمنصة "خطى" باستخدام React 18 + Vite + TailwindCSS.
+<div align="center">
 
-التشغيل المحلي
+![منصة خطى](https://img.shields.io/badge/منصة-خطى-blue?style=for-the-badge)
+![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-1. تثبيت الحزم
+منصة تعليمية متطورة باللغة العربية تركز على التجربة العملية والاحترافية
 
-```
+[التوثيق](./docs) • [التصميم](./GRAD_SCHOOL_REDESIGN.md) • [الأداء](./PERFORMANCE_OPTIMIZATIONS.md) • [الأمان](./SECURITY.md)
+
+</div>
+
+## ✨ المميزات
+
+- 🎨 **تصميم حديث**: مطابق لأفضل معايير التصميم العالمية
+- ⚡ **أداء عالي**: محسن للسرعة مع تقسيم الكود وضغط متقدم
+- 📱 **استجابة كاملة**: يعمل بسلاسة على جميع الأجهزة
+- 🔒 **أمان متقدم**: يتبع أفضل ممارسات الأمان
+- 🌐 **دعم RTL**: مصمم خصيصاً للغة العربية
+- 🚀 **تحسينات الأداء**: Service Worker وتحميل مؤجل
+
+## 🛠️ التقنيات المستخدمة
+
+### الأساسية
+- **React 18** - مكتبة واجهة المستخدم
+- **Vite 5** - أداة البناء والتطوير
+- **React Router 6** - التنقل بين الصفحات
+- **TailwindCSS 3** - إطار عمل CSS
+
+### التحسينات
+- **Framer Motion** - الحركات والتأثيرات
+- **Lucide React** - الأيقونات المحسنة
+- **HeadlessUI** - مكونات UI متاحة
+
+### الأدوات
+- **ESLint** - فحص الكود
+- **Prettier** - تنسيق الكود
+- **Vitest** - اختبارات الوحدة
+- **GitHub Actions** - CI/CD
+
+## 🚀 البدء السريع
+
+### المتطلبات
+- Node.js 18.18.0 أو أحدث
+- npm 8.0.0 أو أحدث
+
+### التثبيت
+
+```bash
+# استنساخ المشروع
+git clone https://github.com/your-org/khuta-react-platform.git
+cd khuta-react-platform
+
+# تثبيت التبعيات
 npm install
-```
 
-2. تشغيل وضع التطوير
+# إعداد متغيرات البيئة
+cp .env.example .env.local
+# قم بتعديل .env.local حسب احتياجاتك
 
-```
+# تشغيل وضع التطوير
 npm run dev
 ```
 
-3. بناء للإنتاج
+### الأوامر المتاحة
 
-```
-npm run build
+```bash
+# التطوير
+npm run dev              # تشغيل خادم التطوير
+npm run preview          # معاينة البناء المحلي
+
+# البناء
+npm run build            # بناء أساسي
+npm run build:optimized  # بناء محسن مع تحليل
+
+# الاختبار
+npm run test             # تشغيل الاختبارات
+npm run test:coverage    # تشغيل مع تقرير التغطية
+npm run test:ui          # واجهة الاختبارات
+
+# جودة الكود
+npm run lint             # فحص الكود
+npm run lint:fix         # إصلاح مشاكل الكود
+npm run format           # تنسيق الكود
+
+# التحليل
+npm run analyze          # تحليل حجم الحزمة
+npm run audit            # فحص أمني
 ```
 
 اختبار سريع للميزات

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LogIn, Grid, BookOpen, Briefcase, ClipboardCheck, Lightbulb, Lock, Zap, ArrowRight, Mail, Award } from 'lucide-react';
+import { LogIn, Grid, BookOpen, Briefcase, ClipboardCheck, Lightbulb, Lock, Zap, ArrowRight, Mail, Award } from '../utils/icons';
 import Button from '../components/Button';
 import SmartImage from '../components/SmartImage';
 import HeroCardsImg from '../img/130cba99-7494-4a47-bff0-a6336f363dc4.png';

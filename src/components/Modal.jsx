@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { XMarkIcon } from '@heroicons/react/24/solid';
+import { XMarkIcon } from '../utils/icons';
 
 const Modal = ({ isOpen, onClose, children }) => {
   return (

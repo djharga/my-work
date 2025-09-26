@@ -25,9 +25,9 @@ export default function Card({ item, onFlick }) {
     }
   }
 
-  const cardBaseStyles = "w-80 md:w-96 bg-white rounded-2xl shadow-lg border border-khuta-neutral-200 p-6 text-right transition-shadow duration-300 relative";
-  const cardHoverStyles = "hover:shadow-xl";
-  const decorativeElementStyles = "before:absolute before:left-6 before:top-6 before:w-5 before:h-5 before:bg-gradient-to-br before:from-khuta-accent-100 before:to-khuta-primary-50 before:rounded-full before:blur-lg before:opacity-30";
+  const cardBaseStyles = "grad-card w-80 md:w-96 bg-white rounded-xl shadow-md border border-grad-gray-200 p-6 text-right transition-all duration-300 relative";
+  const cardHoverStyles = "hover:shadow-xl hover:-translate-y-1 hover:border-grad-gray-300";
+  const decorativeElementStyles = "before:absolute before:left-6 before:top-6 before:w-4 before:h-4 before:bg-gradient-to-br before:from-grad-accent before:to-grad-primary before:rounded-full before:blur-sm before:opacity-20";
 
   const combinedClasses = [
     cardBaseStyles,
@@ -49,8 +49,8 @@ export default function Card({ item, onFlick }) {
       aria-label={item.title}
     >
       <div className={combinedClasses}>
-        <h3 className="font-bold text-lg mb-2 text-khuta-primary-700">{item.title}</h3>
-        <p className="text-base text-khuta-neutral-700">{item.subtitle}</p>
+        <h3 className="font-bold text-xl mb-3 text-grad-primary">{item.title}</h3>
+        <p className="text-base text-grad-gray-600 leading-relaxed">{item.subtitle}</p>
       </div>
     </motion.div>
   );
