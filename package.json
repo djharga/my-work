@@ -8,7 +8,19 @@
     "build:optimized": "node scripts/optimize-build.js",
     "preview": "vite preview",
     "test": "vitest",
-    "analyze": "npm run build && open dist/stats.html"
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "vitest --watch",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,json,css,md}\"",
+    "type-check": "tsc --noEmit",
+    "analyze": "npm run build && open dist/stats.html",
+    "clean": "rm -rf dist node_modules/.vite",
+    "audit": "npm audit --audit-level high",
+    "update": "npm update && npm audit fix",
+    "prepare": "husky install || true"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.8",
